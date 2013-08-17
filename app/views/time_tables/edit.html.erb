@@ -1,0 +1,28 @@
+<h1>Editing time_table</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start At</th>
+    <th>End At</th>
+  </tr>
+  <%= form_for @time_table, url: time_table_path(@time_table) do |f| %>
+    <%= f.fields_for :members, @members do |mf| %>
+      <tr>
+        <td><%= mf.object.name %></td>
+        <%= mf.fields_for :schedules, mf.object.schedules do |sf| %>
+          <td>
+            <%= sf.hidden_field :id %>
+            <%= sf.hidden_field :time_table_id %>
+            <%= sf.hidden_field :date %>
+            <%= sf.time_select :start_at %>
+          </td>
+          <td><%= sf.time_select :end_at %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    <tr><td colspan="3"><%= f.submit %></td></tr>
+  <% end %>
+</table>
+
+<%= link_to 'Show', @time_table %> |
+<%= link_to 'Back', time_tables_path %>

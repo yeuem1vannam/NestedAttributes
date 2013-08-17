@@ -1,0 +1,23 @@
+<h1>Listing time_tables</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @time_tables.each do |time_table| %>
+  <tr>
+    <td><h2><%= time_table.date %></h2></td>
+    <td><%= link_to 'Show', time_table %></td>
+    <td><%= link_to 'Edit', edit_time_table_path(time_table) %></td>
+    <td><%= link_to 'Destroy', time_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Time table', new_time_table_path %>

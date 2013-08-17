@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h2><%= @time_table.date %></h2>
+
+<%= form_for @time_table, url: edit_time_table_path(@time_table), method: :get do |f| %>
+  <% @time_table.members.each do |member| %>
+    <%= check_box_tag "member_ids[]", member.id %><%= member.name %><br/>
+  <% end %>
+  <%= f.submit "Edit those Players"%>
+<% end %>
+<%= link_to 'Edit', edit_time_table_path(@time_table) %> |
+<%= link_to 'Back', time_tables_path %>

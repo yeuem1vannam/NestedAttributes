@@ -1,4 +1,9 @@
 NestedAttributes::Application.routes.draw do
+  resources :tournaments
+  resources :teams
+  resources :members
+  resources :time_tables
+  resources :schedules
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

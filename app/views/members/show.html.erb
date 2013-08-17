@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h2><%= @member.name %></h2>-<%= @member.team.name %><br/>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Start At</th>
+    <th>End At</th>
+  </tr>
+  <% @member.schedules.each do |schedule| %>
+    <tr>
+      <td><%= schedule.id %></td>
+      <td><%= schedule.date %></td>
+      <td><%= schedule.start_at %></td>
+      <td><%= schedule.end_at %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
