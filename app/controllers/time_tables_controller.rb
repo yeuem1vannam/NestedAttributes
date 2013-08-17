@@ -61,7 +61,6 @@ class TimeTablesController < ApplicationController
   # PUT /time_tables/1
   # PUT /time_tables/1.json
   def update
-    binding.pry
     @time_table = TimeTable.find(params[:id])
 
     respond_to do |format|

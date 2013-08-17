@@ -9,7 +9,7 @@
     <%= f.fields_for :members, @members do |mf| %>
       <tr>
         <td><%= mf.object.name %></td>
-        <%= mf.fields_for :schedules, mf.object.schedules do |sf| %>
+        <%= mf.fields_for :schedules, mf.object.schedule_in_table do |sf| %>
           <td>
             <%= sf.hidden_field :id %>
             <%= sf.hidden_field :time_table_id %>
