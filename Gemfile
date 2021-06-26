@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 gem "pry"
-gem "rails-erd"
+gem "rails-erd", ">= 1.1.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
